@@ -4,7 +4,6 @@ process EXTRACT_DATABASE {
     label 'zstd' // controls conda, docker, + singularity options
 
     cachedir = params.genotypes_cache ? file(params.genotypes_cache) : workDir
-    storeDir cachedir / "ancestry" / "ref_extracted"
 
     conda "${task.ext.conda}"
 
